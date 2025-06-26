@@ -1,0 +1,318 @@
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi/Satoshi-VariableItalic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+}
+body {
+  margin: 0;
+  color: rgb(255, 255, 255);
+  font-family: Satoshi, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  cursor: none;
+}
+body a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: none;
+  outline: none;
+  caret-color: transparent;
+}
+body a :visited, body a :active, body a :hover, body a :focus {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  cursor: none;
+}
+body .bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+body ::selection {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.bio-section {
+  max-width: 40rem;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(0.4rem);
+}
+.bio-section .profile-picture {
+  user-select: none;
+  filter: saturate(0);
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+  overflow: visible;
+}
+.bio-section .profile-picture .avatar, .bio-section .profile-picture .decoration {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+.bio-section .profile-picture .avatar {
+  z-index: 1;
+  border-radius: 50%;
+}
+.bio-section .profile-picture .decoration {
+  z-index: 2;
+  pointer-events: none;
+  scale: 1.4;
+}
+.bio-section .info {
+  margin-bottom: 20px;
+}
+.bio-section .info .name {
+  font-size: 2.5rem;
+  text-shadow: 0 0 1.5px rgb(255, 255, 255), 0 0 3.5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 32px rgb(255, 255, 255);
+  animation: neonPulse 4s ease-in-out infinite;
+}
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow: 0 0 1.5px rgb(255, 255, 255), 0 0 3.5px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 32px rgb(255, 255, 255);
+  }
+  50% {
+    text-shadow: 0 0 0.6px rgb(255, 255, 255), 0 0 1.2px rgb(255, 255, 255), 0 0 2.8px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 8px rgb(255, 255, 255);
+  }
+}
+.bio-section .info .quotation-mark {
+  font-size: 2rem;
+  vertical-align: middle;
+  line-height: 1;
+  position: relative;
+  top: 0.23rem;
+}
+.bio-section .info .description {
+  font-weight: normal;
+}
+.bio-section .info .description .citation-author {
+  opacity: 0.5;
+}
+.bio-section .info .location {
+  opacity: 0.7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bio-section .info .location svg {
+  height: 1.5rem;
+}
+.bio-section .social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.bio-section .social-buttons .icon {
+  transition: transform 0.5s ease;
+  position: relative;
+}
+.bio-section .social-buttons .icon svg {
+  scale: 0.8;
+}
+.bio-section .social-buttons .icon:hover {
+  transform: scale(1.5);
+}
+.bio-section .social-buttons .icon[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(23, 23, 23);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
+  pointer-events: none;
+  z-index: 10;
+}
+.bio-section .social-buttons .icon[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  color: rgb(255, 255, 255);
+  width: 25rem;
+  backdrop-filter: blur(0.4rem);
+  border-radius: 12px;
+}
+.music-player .album-art {
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+  filter: saturate(0);
+  user-select: none;
+}
+.music-player .album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.music-player .player-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-grow: 1;
+}
+.music-player .player-controls .song-info {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.music-player .player-controls .song-info .song-title {
+  font-size: 1.1rem;
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.music-player .player-controls .song-info .song-artist {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.music-player .player-controls .progress-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.music-player .player-controls .progress-bar-container .current-time,
+.music-player .player-controls .progress-bar-container .total-time {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  user-select: none;
+}
+.music-player .player-controls .progress-bar-container .progress-wrapper {
+  flex-grow: 1;
+  height: 16px;
+  display: flex;
+  align-items: center;
+}
+.music-player .player-controls .progress-bar-container .progress-wrapper .progress-bar {
+  height: 4px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  position: relative;
+}
+.music-player .player-controls .progress-bar-container .progress-wrapper .progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+}
+.music-player .player-controls .playback-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+.music-player .player-controls .playback-buttons svg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.music-player .player-controls .playback-buttons svg:hover {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 0.6px rgb(255, 255, 255), 0 0 1.2px rgb(255, 255, 255), 0 0 2.8px rgb(255, 255, 255), 0 0 7px rgb(255, 255, 255), 0 0 8px rgb(255, 255, 255);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.12s ease-out, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  z-index: 10000;
+  mix-blend-mode: difference;
+}
+.custom-cursor.small {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+}
+
+.custom-context-menu {
+  position: fixed;
+  z-index: 9998;
+  display: none;
+  background-color: rgba(23, 23, 23, 0.7);
+  backdrop-filter: blur(0.4rem);
+  border-radius: 12px;
+  color: rgb(255, 255, 255);
+  min-width: 160px;
+  font-family: Satoshi, sans-serif;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.custom-context-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.custom-context-menu ul li {
+  padding: 12px 20px;
+  transition: background 0.2s;
+}
+.custom-context-menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.custom-context-menu ul li svg {
+  scale: 0.5;
+  vertical-align: middle;
+  line-height: 1;
+  position: relative;
+}
+
+/*# sourceMappingURL=style.css.map */
