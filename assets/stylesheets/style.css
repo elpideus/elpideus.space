@@ -399,7 +399,6 @@ body ::selection {
     scale: 0.6;
   }
 }
-/* === Mobile Styles === */
 @media (max-width: 480px) {
   .bg-video {
     object-position: calc(100% + 14rem) center !important;

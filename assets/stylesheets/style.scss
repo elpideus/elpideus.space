@@ -9,23 +9,23 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  justify-content: center; // Added back for vertical centering
+  justify-content: center;
   align-items: center;
   cursor: none;
-  overflow-y: auto; // Allow vertical scrolling on the body itself if content overflows
+  overflow-y: auto;
   background-color: rgb(15, 15, 15);
 
   a {
     text-decoration: none;
     color: $text-color;
-    cursor: none; // Default for desktop
+    cursor: none;
     outline: none;
     caret-color: transparent;
 
     :visited, :active, :hover, :focus {
       text-decoration: none;
       color: $text-color;
-      cursor: none; // Default for desktop
+      cursor: none;
     }
   }
 
@@ -37,7 +37,7 @@ body {
     height: 100vh;
     object-fit: cover;
     z-index: -1;
-    object-position: center; // Default for desktop
+    object-position: center;
   }
 
   ::selection {
@@ -57,7 +57,7 @@ body {
   align-items: center;
   backdrop-filter: blur(0.4rem);
   margin-top: 20px;
-  margin-bottom: 120px; // Increased margin to make space for the music player
+  margin-bottom: 120px;
 
   .profile-picture {
     user-select: none;
@@ -154,7 +154,7 @@ body {
 
     .icon {
       transition: transform 0.5s ease;
-      position: relative; // Needed for tooltip positioning
+      position: relative;
 
       svg {
         scale: .8;
@@ -168,7 +168,7 @@ body {
       &[data-tooltip]:hover::before {
         content: attr(data-tooltip);
         position: absolute;
-        top: -20px; // Adjust as needed to position above the icon
+        top: -20px;
         left: 50%;
         transform: translateX(-50%);
         background-color: rgb(23, 23, 23);
@@ -184,7 +184,7 @@ body {
       }
 
       &[data-tooltip]::before {
-        content: ''; // Empty content for initial state
+        content: '';
         position: absolute;
         opacity: 0;
         visibility: hidden;
@@ -398,7 +398,7 @@ body {
     max-width: 90%;
     padding: 15px;
     background-color: rgba(23, 23, 23, .5);
-    margin-bottom: 150px; // Adjusted margin for tablet, potentially slightly more for larger player
+    margin-bottom: 150px;
   }
 
   .profile-picture {
@@ -420,18 +420,17 @@ body {
   }
 
   .social-buttons {
-    gap: 10px; // Increase gap for easier tapping
+    gap: 10px;
 
     .icon {
       svg {
-        scale: 1; // Make icons slightly larger
+        scale: 1;
       }
-      // Remove hover effects for touch devices
       &:hover {
         transform: none;
       }
       &[data-tooltip]:hover::before {
-        display: none; // Hide tooltips on touch
+        display: none;
       }
     }
   }
@@ -440,36 +439,33 @@ body {
     max-width: 40rem;
     bottom: 10px;
     padding: 10px 15px;
-    // On tablet, keep album art to the left
-    flex-direction: row; // Ensure row direction for tablet
-    justify-content: flex-start; // Align items to the start for horizontal layout
+    flex-direction: row;
+    justify-content: flex-start;
 
     .album-art {
       height: 50px;
-      width: 50px; // Set width to match height for square album art
+      width: 50px;
     }
 
     .player-controls {
-      // No change needed here for flex direction, it's already column within its parent
       .song-info {
-        // For tablet, keep song info to the left, and it can wrap
         justify-content: flex-start;
-        flex-direction: row; // Keep song title and artist in a row
-        gap: 10px; // Adjust gap between title and artist if needed
-        flex-wrap: wrap; // Allow wrapping if text is too long
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
       }
       .playback-buttons svg {
-        width: 32px; // Make buttons larger for touch
+        width: 32px;
         height: 32px;
         &:hover {
-          transform: none; // Remove hover transform
+          transform: none;
         }
       }
     }
   }
 
   .custom-cursor {
-    display: none; // Hide custom cursor on mobile/tablet
+    display: none;
   }
 
   .custom-context-menu {
@@ -479,22 +475,21 @@ body {
     ul li {
       padding: 10px 15px;
       svg {
-        scale: 0.6; // Adjust icon size within context menu
+        scale: 0.6;
       }
     }
   }
 }
 
-/* === Mobile Styles === */
 @media (max-width: 480px) {
 
   .bg-video {
-    object-position: calc(100% + 14rem) center !important; // Default for desktop
+    object-position: calc(100% + 14rem) center !important;
   }
 
   .bio-section {
     padding: 10px;
-    margin-bottom: 110px; // Adjusted margin as player will be more compact
+    margin-bottom: 110px;
   }
 
   .profile-picture {
@@ -516,27 +511,27 @@ body {
   }
 
   .music-player {
-    flex-direction: row; // Set to row for horizontal layout
+    flex-direction: row;
     align-items: center;
-    text-align: left; // Align text to the left within the player
+    text-align: left;
     gap: 10px;
     width: 95%;
     padding: 10px;
 
     .album-art {
-      height: 50px; // Keep album art at a good size
-      width: 50px; // Maintain square aspect ratio
+      height: 50px;
+      width: 50px;
     }
 
     .player-controls {
-      width: auto; // Let content dictate width
-      flex-grow: 1; // Allow controls to take up remaining space
+      width: auto;
+      flex-grow: 1;
 
       .song-info {
-        justify-content: flex-start; // Align song info to the start
-        flex-direction: column; // Stack title and artist within controls
+        justify-content: flex-start;
+        flex-direction: column;
         gap: 2px;
-        align-items: flex-start; // Align stacked items to the left
+        align-items: flex-start;
       }
     }
   }
