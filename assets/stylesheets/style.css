@@ -16,10 +16,12 @@ body {
   font-family: Satoshi, sans-serif;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   cursor: none;
+  overflow-y: auto;
+  background-color: rgb(15, 15, 15);
 }
 body a {
   text-decoration: none;
@@ -41,6 +43,7 @@ body .bg-video {
   height: 100vh;
   object-fit: cover;
   z-index: -1;
+  object-position: center;
 }
 body ::selection {
   background-color: rgb(255, 255, 255);
@@ -57,6 +60,8 @@ body ::selection {
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(0.4rem);
+  margin-top: 20px;
+  margin-bottom: 120px;
 }
 .bio-section .profile-picture {
   user-select: none;
@@ -241,7 +246,7 @@ body ::selection {
 }
 .music-player .player-controls .progress-bar-container .progress-wrapper .progress-bar .progress {
   height: 100%;
-  width: 0%;
+  width: 0;
   background-color: rgb(255, 255, 255);
   border-radius: 2px;
 }
@@ -313,6 +318,132 @@ body ::selection {
   vertical-align: middle;
   line-height: 1;
   position: relative;
+}
+
+/* === Tablet and Mobile Styles === */
+@media (max-width: 1024px) {
+  body {
+    cursor: auto;
+    font-size: 14px;
+  }
+  a {
+    cursor: pointer !important;
+  }
+  .bio-section {
+    max-width: 90%;
+    padding: 15px;
+    background-color: rgba(23, 23, 23, 0.5);
+    margin-bottom: 150px;
+  }
+  .profile-picture {
+    width: 5rem;
+    height: 5rem;
+  }
+  .info .name {
+    font-size: 2rem;
+  }
+  .info .description {
+    font-size: 0.9rem;
+  }
+  .info .quotation-mark {
+    font-size: 1.5rem;
+    top: 0.15rem;
+  }
+  .social-buttons {
+    gap: 10px;
+  }
+  .social-buttons .icon svg {
+    scale: 1;
+  }
+  .social-buttons .icon:hover {
+    transform: none;
+  }
+  .social-buttons .icon[data-tooltip]:hover::before {
+    display: none;
+  }
+  .music-player {
+    max-width: 40rem;
+    bottom: 10px;
+    padding: 10px 15px;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .music-player .album-art {
+    height: 50px;
+    width: 50px;
+  }
+  .music-player .player-controls .song-info {
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .music-player .player-controls .playback-buttons svg {
+    width: 32px;
+    height: 32px;
+  }
+  .music-player .player-controls .playback-buttons svg:hover {
+    transform: none;
+  }
+  .custom-cursor {
+    display: none;
+  }
+  .custom-context-menu {
+    min-width: 120px;
+    font-size: 0.9rem;
+  }
+  .custom-context-menu ul li {
+    padding: 10px 15px;
+  }
+  .custom-context-menu ul li svg {
+    scale: 0.6;
+  }
+}
+/* === Mobile Styles === */
+@media (max-width: 480px) {
+  .bg-video {
+    object-position: calc(100% + 14rem) center !important;
+  }
+  .bio-section {
+    padding: 10px;
+    margin-bottom: 110px;
+  }
+  .profile-picture {
+    width: 4rem;
+    height: 4rem;
+  }
+  .info .name {
+    font-size: 1.8rem;
+  }
+  .info .description {
+    font-size: 0.8rem;
+  }
+  .info .quotation-mark {
+    font-size: 1.2rem;
+    top: 0.1rem;
+  }
+  .music-player {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    width: 95%;
+    padding: 10px;
+  }
+  .music-player .album-art {
+    height: 50px;
+    width: 50px;
+  }
+  .music-player .player-controls {
+    width: auto;
+    flex-grow: 1;
+  }
+  .music-player .player-controls .song-info {
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
