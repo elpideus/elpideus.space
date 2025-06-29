@@ -15,13 +15,13 @@
 <main class="bio-section">
     <div class="profile-picture">
         <img class="decoration" src="https://cdn.discordapp.com/avatar-decoration-presets/a_445566ed965b2c1632a5b45c92f32d11.png">
-        <img class="avatar" src="https://cdn.discordapp.com/avatars/721826189844545666/ce0b53713fd9e98585c7051b6866885d.webp" alt="">
+        <img class="avatar" src="https://cdn.discordapp.com/avatars/721826189844545666/ce0b53713fd9e98585c7051b6866885d.webp" alt="Profile Picture">
     </div>
     <section class="info">
         <h1 class="name">elpideus</h1>
         <h3 class="description">
         <span class="citation-content">
-            <span class="quotation-mark">&ldquo;</span> Doing things fun is good, but doing things great is more fun. <span class="quotation-mark">&rdquo;</span>
+            <span class="quotation-mark">“</span> Doing things fun is good, but doing things great is more fun. <span class="quotation-mark">”</span>
         </span><br />
             <span class="citation-author">~ Watanabe Daisuke</span>
         </h3>
@@ -51,7 +51,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M13.028 2c1.125.003 1.696.009 2.189.023l.194.007c.224.008.445.018.712.03c1.064.05 1.79.218 2.427.465c.66.254 1.216.598 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.012.266.022.487.03.712l.006.194c.015.492.021 1.063.023 2.188l.001.746v1.31a79 79 0 0 1-.023 2.188l-.006.194c-.008.225-.018.446-.03.712c-.05 1.065-.22 1.79-.466 2.428a4.9 4.9 0 0 1-1.153 1.772a4.9 4.9 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465l-.712.03l-.194.006c-.493.014-1.064.021-2.189.023l-.746.001h-1.309a78 78 0 0 1-2.189-.023l-.194-.006a63 63 0 0 1-.712-.031c-1.064-.05-1.79-.218-2.428-.465a4.9 4.9 0 0 1-1.771-1.153a4.9 4.9 0 0 1-1.154-1.772c-.247-.637-.415-1.363-.465-2.428l-.03-.712l-.005-.194A79 79 0 0 1 2 13.028v-2.056a79 79 0 0 1 .022-2.188l.007-.194c.008-.225.018-.446.03-.712c.05-1.065.218-1.79.465-2.428A4.9 4.9 0 0 1 3.68 3.678a4.9 4.9 0 0 1 1.77-1.153c.638-.247 1.363-.415 2.428-.465c.266-.012.488-.022.712-.03l.194-.006a79 79 0 0 1 2.188-.023zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10m0 2a3 3 0 1 1 .001 6a3 3 0 0 1 0-6m5.25-3.5a1.25 1.25 0 0 0 0 2.5a1.25 1.25 0 0 0 0-2.5"/></svg>
             </div>
         </a>
-        <a href="mailto:elpideus@gmail.com" target="_blank" onclick="">
+        <a href="mailto:elpideus@gmail.com" target="_blank">
             <div id="email-icon" class="icon make-cursor-smaller" data-tooltip="Email">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"/></svg>
             </div>
@@ -92,6 +92,16 @@
 </div>
 
 <div class="custom-cursor"></div>
+<div class="volume-control">
+    <div class="volume-button make-cursor-smaller">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="volume-icon"><path fill="currentColor" d="M14 3.23v2.06c2.89.81 5 3.54 5 6.71s-2.11 5.9-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77M16.5 12c0-1.77-1-3.22-2.5-4v8c1.5-.78 2.5-2.23 2.5-4M3 6v12h4l5 5V1L8 6zm7-.45v12.9C9.72 17.65 9.27 17.5 9 17.35L5.41 14H4V7h1.41L9 3.65c.27-.15.72-.3 1-.45"/></svg>
+    </div>
+    <div class="volume-slider-container make-cursor-smaller">
+        <div class="volume-slider">
+            <div class="volume-progress"></div>
+        </div>
+    </div>
+</div>
 <div class="custom-context-menu make-cursor-smaller" id="context-menu">
     <ul>
         <li id="copy-option"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="32" viewBox="0 0 448 512"><path fill="currentColor" d="M208 0h124.1C344.8 0 357 5.1 366 14.1L433.9 82c9 9 14.1 21.2 14.1 33.9V336c0 26.5-21.5 48-48 48H208c-26.5 0-48-21.5-48-48V48c0-26.5 21.5-48 48-48M48 128h80v64H64v256h192v-32h64v48c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48"/></svg> Copy</li>
