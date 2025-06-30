@@ -1,10 +1,12 @@
 const contextMenu = document.getElementById("context-menu");
 const copyOption = document.getElementById("copy-option");
 const shareOption = document.getElementById("share-option");
+let storedSelectedText = "";
 
 window.addEventListener("contextmenu", e => {
     e.preventDefault();
-    copyOption.style.display = window.getSelection().toString().trim() ? "block" : "none";
+    storedSelectedText = window.getSelection().toString();
+    copyOption.style.display = storedSelectedText.trim() ? "block" : "none";
     contextMenu.style.top = `${e.clientY}px`;
     contextMenu.style.left = `${e.clientX}px`;
     contextMenu.style.display = "block";
@@ -13,15 +15,13 @@ window.addEventListener("contextmenu", e => {
 window.addEventListener("click", () => contextMenu.style.display = "none");
 
 copyOption.addEventListener("click", () => {
-    const selectedText = window.getSelection().toString();
-    if (selectedText) {
+    if (storedSelectedText) {
         const textarea = document.createElement('textarea');
-        textarea.value = selectedText;
+        textarea.value = storedSelectedText;
         document.body.appendChild(textarea);
         textarea.select();
         try {
             document.execCommand('copy');
-            // Provide feedback to the user without alert()
             showTemporaryMessage("Selected text copied to clipboard!");
         } catch (err) {
             console.error('Failed to copy text: ', err);
@@ -30,6 +30,7 @@ copyOption.addEventListener("click", () => {
         document.body.removeChild(textarea);
     }
 });
+
 
 shareOption.addEventListener("click", () => {
     if (navigator.share) {
