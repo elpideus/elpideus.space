@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Stefan Narcis Cucoranu - CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    @page { size: A4; margin: 0; }
+
+    :root {
+        --bg: #f7f7f5;
+        --ink: #1a1a1a;
+        --muted: #6b6b6b;
+        --rule: #d9d9d5;
+        --chip: #ebebe7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        font-size: 9.2pt;
+        line-height: 1.45;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .page {
+        width: 210mm;
+        min-height: 297mm;
+        padding: 15mm 16mm 12mm;
+        background: var(--bg);
+        page-break-after: always;
+    }
+    .page:last-child { page-break-after: auto; }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 12mm;
+        padding-bottom: 5mm;
+        border-bottom: 1.6pt solid var(--ink);
+    }
+    .name {
+        font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+        font-size: 25pt;
+        font-weight: 400;
+        line-height: 1.08;
+        letter-spacing: -0.4pt;
+    }
+    .role {
+        margin-top: 2.5mm;
+        font-size: 10pt;
+        color: var(--muted);
+        font-weight: 400;
+    }
+    .contacts {
+        text-align: right;
+        font-size: 9pt;
+        color: var(--muted);
+        line-height: 1.75;
+        white-space: nowrap;
+    }
+
+    .section-title {
+        margin-top: 5.6mm;
+        padding-bottom: 1.6mm;
+        border-bottom: 0.8pt solid var(--rule);
+        font-size: 7.6pt;
+        font-weight: 700;
+        letter-spacing: 1.8pt;
+        text-transform: uppercase;
+    }
+    .section-title + * { margin-top: 3.2mm; }
+
+    .entry { margin-top: 4.4mm; break-inside: avoid; }
+    .entry-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 8mm;
+    }
+    .entry-title { font-size: 11pt; font-weight: 700; }
+    .entry-meta {
+        font-size: 8.4pt;
+        color: var(--muted);
+        white-space: nowrap;
+        text-align: right;
+    }
+    .entry-sub {
+        margin-top: 0.8mm;
+        font-size: 9.2pt;
+        font-style: italic;
+        color: #4a4a4a;
+    }
+    ul.bullets { margin-top: 2.2mm; list-style: none; }
+    ul.bullets li {
+        position: relative;
+        padding-left: 4.2mm;
+        margin-top: 1.4mm;
+    }
+    ul.bullets li::before {
+        content: "\2013";
+        position: absolute;
+        left: 0;
+        color: var(--ink);
+    }
+    strong { font-weight: 700; }
+
+    .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 11mm;
+        margin-top: 6mm;
+    }
+    .cols .section-title { margin-top: 0; }
+
+    .skill-row {
+        display: grid;
+        grid-template-columns: 26mm 1fr;
+        gap: 3mm;
+        align-items: start;
+        margin-top: 3.2mm;
+    }
+    .skill-label { font-size: 9pt; color: #3d3d3d; padding-top: 1mm; }
+    .chips { display: flex; flex-wrap: wrap; gap: 1.6mm; }
+    .chip {
+        background: var(--chip);
+        border-radius: 1.2mm;
+        padding: 1.1mm 2.6mm;
+        font-size: 8.6pt;
+        white-space: nowrap;
+    }
+
+    .edu { margin-top: 4mm; }
+    .edu:first-of-type { margin-top: 0; }
+    .edu-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 5mm;
+    }
+    .edu-title { font-size: 10.4pt; font-weight: 700; }
+    .edu-date { font-size: 8.6pt; color: var(--muted); white-space: nowrap; }
+    .edu-sub { font-size: 9.2pt; font-style: italic; color: #4a4a4a; }
+</style>
+</head>
+<body>
+
+<section class="page">
+    <header class="header">
+        <div>
+            <h1 class="name">Stefan Narcis<br />Cucoranu</h1>
+            <p class="role">Full Stack Web Developer &amp; Designer</p>
+        </div>
+        <div class="contacts">
+            elpideus@gmail.com<br />
+            (+39) 377 382 2343<br />
+            github.com/elpideus<br />
+            linkedin.com/in/elpideus<br />
+            Ostuni, Italy &middot; Available remotely
+        </div>
+    </header>
+
+    <h2 class="section-title">Profile</h2>
+    <p class="profile">
+        Full stack web developer with experience in startup environments and freelance projects, focused on
+        building fast, clean and maintainable digital products. I work across the whole stack, from the database
+        to the user interface, with a minimalist approach: no superfluous dependencies, lightweight architectures,
+        code that scales without becoming complex. Currently employed remotely at Agrisense, where I develop the
+        IoT web platform for agricultural devices with Next.js, React and Supabase. I contribute actively to open
+        source and have experience with private clients across different technical domains.
+    </p>
+
+    <h2 class="section-title">Experience</h2>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">Agrisense</span>
+            <span class="entry-meta">Feb 2026 &ndash; Present &middot; Remote</span>
+        </div>
+        <div class="entry-sub">Full Stack Developer</div>
+        <ul class="bullets">
+            <li>Development and maintenance of the web platform for agricultural IoT devices, used by farmers for
+                real-time crop monitoring and management.</li>
+            <li>Responsible for the entire stack: API architecture with <strong>Supabase</strong> (authentication,
+                PostgreSQL database, realtime), front end with <strong>Next.js</strong> and <strong>React</strong>.</li>
+            <li>Design of interfaces optimized for rural contexts: data clarity, accessibility and stability even
+                under limited connectivity.</li>
+            <li>Implementation of best practices for security, performance and scalability within an agile team.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">Breakout Schematics: TradingView Indicator</span>
+            <span class="entry-meta">Mar 2026 &middot; Remote &middot; Private client</span>
+        </div>
+        <div class="entry-sub">Pine Script Developer &middot; commissioned work</div>
+        <ul class="bullets">
+            <li>Commissioned development of an advanced TradingView indicator that automatically detects
+                high-probability breakout patterns (SSA, S1, MUT) through an architecture of independent state
+                machines.</li>
+            <li>Tracks a configurable consolidation session (default: Asian session), locks the reference levels at
+                close and monitors every candle for structured patterns with precise pip thresholds.</li>
+            <li>Signal rendering with labels, triangular markers and native alert support; compatible with every
+                timeframe and instrument (Forex, indices, commodities).</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">Social Media Manager</span>
+            <span class="entry-meta">2021 &ndash; 2022 &middot; Ostuni (IT)</span>
+        </div>
+        <div class="entry-sub">Local company &middot; social channel management and content production</div>
+        <ul class="bullets">
+            <li>Direction and production of all visual content: video, photography and promotional graphics.</li>
+            <li>Definition of the editorial calendar and publishing strategy to maximize reach and engagement.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">Freelance &middot; Sartoria Il Baco</span>
+            <span class="entry-meta">Late 2019 &middot; Ostuni (IT)</span>
+        </div>
+        <div class="entry-sub">Web Designer &amp; Developer</div>
+        <ul class="bullets">
+            <li>Design and development of a single-page site with an "illustrated/cartoon" style built with
+                <strong>React</strong> and custom CSS; UI prototyping in <strong>Figma</strong>.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="page">
+    <h2 class="section-title" style="margin-top:0">Selected Projects</h2>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">TeleVault</span>
+            <span class="entry-meta">2025 &middot; github.com/elpideus/TeleVault</span>
+        </div>
+        <div class="entry-sub">Self-hosted cloud storage on Telegram infrastructure</div>
+        <ul class="bullets">
+            <li>Open source application that turns Telegram into a personal cloud vault: upload, download and
+                organization of files using the Telegram servers as free storage.</li>
+            <li>Direct integration of the Telegram APIs (MTProto), chunking for large files and a web interface
+                for browsing the content.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">PeakPlay</span>
+            <span class="entry-meta">2025 &middot; github.com/elpideus/peakplay</span>
+        </div>
+        <ul class="bullets">
+            <li>Open source project available on GitHub, developed with attention to performance and to the
+                simplicity of the architecture.</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-head">
+            <span class="entry-title">tgbiofy &middot; Telegram / Spotify Integration</span>
+            <span class="entry-meta">2021 &middot; github.com/elpideus/tgbiofy</span>
+        </div>
+        <ul class="bullets">
+            <li>Python script that automatically updates the Telegram bio, photo and name with the track currently
+                playing on Spotify, through OAuth2 integration with both APIs.</li>
+        </ul>
+    </div>
+
+    <div class="cols">
+        <div>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skill-row">
+                <span class="skill-label">Front end</span>
+                <div class="chips">
+                    <span class="chip">TypeScript</span><span class="chip">JavaScript ES6+</span>
+                    <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Qwik</span>
+                    <span class="chip">HTML5</span><span class="chip">SCSS / CSS</span>
+                </div>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Back end &amp; data</span>
+                <div class="chips">
+                    <span class="chip">Node.js</span><span class="chip">Bun</span>
+                    <span class="chip">Supabase</span><span class="chip">MySQL</span>
+                    <span class="chip">Prisma</span><span class="chip">REST API</span>
+                </div>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Tools</span>
+                <div class="chips">
+                    <span class="chip">Git / GitHub</span><span class="chip">Linux</span>
+                    <span class="chip">Figma</span><span class="chip">FFmpeg</span>
+                    <span class="chip">Pine Script</span>
+                </div>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Design &amp; media</span>
+                <div class="chips">
+                    <span class="chip">Photoshop</span><span class="chip">Premiere Pro</span>
+                    <span class="chip">After Effects</span><span class="chip">DaVinci Resolve</span>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2 class="section-title">Education</h2>
+            <div class="edu">
+                <div class="edu-head">
+                    <span class="edu-title">Scientific High School Diploma</span>
+                    <span class="edu-date">2019 &ndash; 2022</span>
+                </div>
+                <div class="edu-sub">Liceo "L. Pepe &ndash; A. Calamo", Ostuni</div>
+                <div class="edu-sub">Scientific studies and computer science</div>
+            </div>
+            <div class="edu">
+                <div class="edu-head">
+                    <span class="edu-title">Technical Institute</span>
+                    <span class="edu-date">2017 &ndash; 2019</span>
+                </div>
+                <div class="edu-sub">Pantanelli-Monnet, Ostuni</div>
+                <div class="edu-sub">Technical and commercial IT disciplines</div>
+            </div>
+
+            <h2 class="section-title" style="margin-top:7mm">Other</h2>
+            <ul class="bullets">
+                <li>Active contributor to <strong>open source</strong> projects</li>
+                <li>Fluent in <strong>Italian</strong>, <strong>English</strong> and <strong>Romanian</strong></li>
+                <li>Oriented towards <strong>remote work</strong> and distributed teams</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
